@@ -16,7 +16,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * obtem um nodo aleatório
-     * @return - node aleatório
      */
     public ServerNode getRandomNode() {
         int nodeCounter = nodeList.size() - 1;
@@ -45,8 +44,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * Define um node como Leader
-     * @param port - id do node a definir como lider
-     * @throws RemoteException
      */
     @Override
     public void setLeader(int port) throws RemoteException {
@@ -64,8 +61,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * retorna o node correspondente ao lider
-     * @return - node lider
-     * @throws RemoteException
      */
     @Override
     public ServerNode getLeaderNode() throws RemoteException {
@@ -79,8 +74,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * adiciona um place invocando o addPlace do node lider
-     * @param p - place a adicionar
-     * @throws RemoteException
      */
     @Override
     public boolean addPlace(Place p) throws RemoteException {
@@ -105,8 +98,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * adiciona um nodo à lista de nodos conhecidos e inicia o respetivo placeManager
-     * @param nodePort - nodo a ser iniciado
-     * @throws RemoteException
      */
     @Override
     public void addNode(int nodePort) throws RemoteException {
@@ -121,8 +112,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * Obtem a lista de places de um nodo aleatório
-     * @return lista de todos os places
-     * @throws RemoteException
      */
     @Override
     public ArrayList allPlaces() throws RemoteException {
@@ -142,9 +131,6 @@ public class RequestHandler extends UnicastRemoteObject implements FrontEndInter
 
     /**
      * Obtem a informação de um place em especifico, obtido de forma aleatoria
-     * @param cp - codigo postal do place a obter
-     * @return place pretendido
-     * @throws RemoteException
      */
     @Override
     public Place getPlace(String cp) throws RemoteException {

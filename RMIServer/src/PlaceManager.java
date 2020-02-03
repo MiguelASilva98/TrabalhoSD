@@ -120,7 +120,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
 
     /**
      * função responsavel por enviar as mensagens do multicast
-     * @param message - mensagem a enviar
      */
     private void sendMessage(String message) {
         this.sendThread = new Thread() {
@@ -177,9 +176,7 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
     /**
      * Insere o porto recebido e o respetivo timestamp no mapa de portos conhecidos
      * ou atualiza apenas o timestamp caso o porto já seja conhecido
-     * @param timestamp - timestamp em que a mensagem foi recebida
-     * @param receivedPort - porto recebido na mensagem
-     */
+    */
     private synchronized void updatePlaceManagersListOnAliveEvent(long timestamp, int receivedPort) {
         if (!pmMap.containsKey(receivedPort)) {
             pmMap.put(receivedPort, timestamp);
@@ -195,7 +192,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
 
     /**
      * atualiza o mapa de placeManagers conhecidos tendo em conta a ultima mensagem recebida
-     * @param timestamp - timestamp da hora atual
      */
     private synchronized void updatePlaceManagersListOnHeartbeatEvent(long timestamp) {
         if (pmMap != null) {
@@ -225,7 +221,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
 
     /**
      * Sincroniza o novo placeManager com a informação de Places atual, através da inserção de logs
-     * @param syncPort - porto do placeManager a sincronizar
      */
     private void syncNewNode(int syncPort) {
         if (placesList != null && placesList.size() > 0) {
@@ -300,8 +295,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
 
     /**
      * adiciona um place à lista de Places
-     * @param p - place a adicionar
-     * @throws RemoteException
      */
     @Override
     public boolean addPlace(Place p) throws RemoteException {
@@ -334,8 +327,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
     }
     /**
      * adiciona um log à lista de logs
-     * @param log - log a ser adicionado
-     * @throws RemoteException
      */
     @Override
     public void addOperation(OperationLog log) throws RemoteException {
@@ -346,8 +337,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
 
     /**
      * devolve a lista de todos os places
-     * @return -lista de todos os places
-     * @throws RemoteException
      */
     @Override
     public ArrayList allPlaces() throws RemoteException {
@@ -356,9 +345,6 @@ public class PlaceManager extends UnicastRemoteObject implements PlacesListInter
 
     /**
      * retorna o place referente ao código postal recebido
-     * @param cp - codigo postal do place
-     * @return - place correspondente ou null caso não encontrado
-     * @throws RemoteException
      */
     @Override
     public Place getPlace(String cp) throws RemoteException {
