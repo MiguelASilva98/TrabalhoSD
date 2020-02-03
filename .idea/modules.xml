@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FRONTEND/FRONT.iml" filepath="$PROJECT_DIR$/FRONTEND/FRONT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMIClient/RMI.iml" filepath="$PROJECT_DIR$/RMIClient/RMI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMIServer/RMIServer.iml" filepath="$PROJECT_DIR$/RMIServer/RMIServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabalhoSD.iml" filepath="$PROJECT_DIR$/TrabalhoSD.iml" />
+    </modules>
+  </component>
+</project>
